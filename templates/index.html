@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdutainAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e9f0f5 0%, #d4e6f1 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: row;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .container:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .left-side, .right-side {
+            width: 50%;
+            padding: 25px;
+            position: relative;
+        }
+        
+        .left-side {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #e9eff6 0%, #f4f8fb 100%);
+            border-radius: 20px;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .right-side {
+            overflow-y: auto;
+            padding: 30px 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        label {
+            font-weight: 500;
+            color: #34495e;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .form-group:hover label {
+            color: #3498db;
+        }
+        
+        input[type="file"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 14px 18px;
+            margin-top: 8px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        input[type="file"]:hover,
+        input[type="number"]:hover,
+        select:hover {
+            border-color: #3498db;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.1);
+        }
+        
+        input[type="file"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            background-color: #ffffff;
+        }
+        
+        model-viewer {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button:hover {
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+        
+        button:hover::after {
+            transform: rotate(45deg) translateY(100%);
+        }
+        
+        #instructions {
+            font-size: 1.1em;
+            color: #34495e;
+            margin: 20px 0 30px;
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .mcq {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .mcq:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: 90%;
+                flex-direction: column;
+            }
+        
+            .left-side, .right-side {
+                width: 100%;
+                padding: 20px;
+            }
+        
+            model-viewer {
+                height: 300px;
+            }
+        
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+        
+            .form-group {
+                margin-bottom: 20px;
+            }
+        
+            input[type="file"],
+            input[type="number"],
+            select {
+                padding: 12px 15px;
+            }
+        
+            h1 {
+                font-size: 1.5em;
+            }
+        
+            #instructions {
+                font-size: 1em;
+            }
+        
+            button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <!-- Include model-viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <model-viewer id="model-viewer" src="/models/goku.glb" alt="Goku" camera-controls ar shadow-intensity="1" exposure="0.8" camera-orbit="0deg 90deg 2.5m"></model-viewer>
+        </div>
+        <div class="right-side">
+            <h1>Generate MCQs from Your Sources</h1>
+            <p id="instructions">Follow the instructions from the character to complete the form below.</p>
+            <form action="/generate" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Upload your document (PDF, TXT, DOCX):</label>
+                    <input type="file" name="file" required>
+                </div>
+                <div class="form-group">
+                    <label for="num_questions">How many questions do you want?</label>
+                    <input type="number" name="num_questions" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="character">Select a Character:</label>
+                    <select name="character" id="character-select" required>
+                        <option value="goku">Goku</option>
+                        <option value="spider-man">Spider Man</option>
+                        <option value="halo_reach">Halo Reach</option>
+                        <option value="captain_america">Captain America</option>
+                        <option value="doremon">Doremon</option>
+                    </select>
+                </div>
+                <button type="submit">Generate MCQs</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to update the 3D character based on selection
+        document.getElementById('character-select').addEventListener('change', function() {
+            const character = this.value;
+            const modelViewer = document.getElementById('model-viewer');
+            modelViewer.src = `/models/${encodeURIComponent(character)}.glb`;
+        });
+
+        // Function to give instructions using the 3D character
+        function giveInstructions() {
+            const instructions = "Please upload your document, select the number of questions, and choose a character.";
+            speakText(instructions);
+        }
+
+        // Function to speak text using Web Speech API
+        function speakText(text) {
+            const speechSynthesis = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+
+        // Give instructions on page load
+        window.addEventListener('load', giveInstructions);
+    </script>
+</body>
+</html>
