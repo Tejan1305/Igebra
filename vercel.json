@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "50mb",
+          "runtime": "python3.9"
+        }
+      },
+      {
+        "src": "templates/*.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "static/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/app.py"
+      }
+    ],
+    "env": {
+      "GOOGLE_API_KEY": "AIzaSyA0e8swgAKC5NskeCNMlzWXWnYlNpnWgSo",
+      "FLASK_ENV": "development",
+      "SECRET_KEY": "9f8d2c4b8c2e4f3f8d1e4b2a9c5d6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f",
+      "MONGO_URI": "mongodb://localhost:27017/user_database"
+    }
+  }
