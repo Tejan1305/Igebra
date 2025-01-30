@@ -21,8 +21,8 @@ app.config['RESULTS_FOLDER'] = 'results/'
 app.config['MODELS_FOLDER'] = 'models/'
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'txt', 'docx'}
 
-# MongoDB setup
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+# MongoDB Atlas setup
+client = pymongo.MongoClient("mongodb+srv://username:Hiiammongo1@cluster0.cu6fn.mongodb.net/")
 db = client["user_database"]
 users_collection = db["users"]
 
