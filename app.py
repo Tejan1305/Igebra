@@ -10,7 +10,7 @@ from fpdf import FPDF
 from functools import wraps
 
 # Set your API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyA0e8swgAKC5NskeCNMlzWXWnYlNpnWgSo"
+os.environ["GOOGLE_API_KEY"] = "add ur api key"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("models/gemini-1.5-flash-8b")
 
@@ -22,7 +22,7 @@ app.config['MODELS_FOLDER'] = 'models/'
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'txt', 'docx'}
 
 # MongoDB Atlas setup
-client = pymongo.MongoClient("mongodb+srv://username:Hiiammongo1@cluster0.cu6fn.mongodb.net/")
+client = pymongo.MongoClient("add mongodb atlas url")
 db = client["user_database"]
 users_collection = db["users"]
 
