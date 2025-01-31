@@ -108,7 +108,6 @@ pyttsx3==2.98
 pytweening==1.2.0
 pytz==2024.2
 pywhatkit==5.4
-pywin32==308
 pyzmq==26.2.0
 referencing==0.35.1
 regex==2024.11.6
