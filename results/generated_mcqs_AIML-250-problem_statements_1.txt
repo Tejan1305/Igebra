@@ -1,0 +1,43 @@
+## MCQ
+Question: Which of the following is NOT a project idea mentioned in the text?
+A)  A machine learning model for real-time facial recognition in crowded environments.
+B)  A system for automated trading based on real-time market data and algorithmic predictions.
+C)  A program to solve Sudoku puzzles.
+D)  A model to predict the aesthetic quality of photographs based on visual features.
+Correct Answer: C
+
+
+## MCQ
+Question:  What is the outcome of Project -1: Fake News Detection?
+A) To detect and classify spam emails.
+B) To automatically recognize basic emotional states from human facial expressions.
+C) To detect fake news, differentiating between real and fake news stories.
+D) To build a model for predicting patient outcomes after surgery.
+Correct Answer: C
+
+
+## MCQ
+Question:  Which project uses a decision tree algorithm?
+A)  Facial emotion recognition
+B)  Lung Cancer Detection
+C)  Fake News Detection
+D)  8-Puzzle Game Simulation
+Correct Answer: B
+
+
+## MCQ
+Question:  What is a key project requirement mentioned for Project -6: MNIST Digit Classification?
+A)  Using the OpenMV framework.
+B)  Employing a count vectorizer for text analysis.
+C)  Utilizing Keras, TensorFlow, and OpenCV libraries.
+D)  Implementing a chatbot for customer service.
+Correct Answer: C
+
+
+## MCQ
+Question:  Which project involves building a website for an e-commerce store?
+A)  Facial emotion recognition.
+B)  MNIST Digit Classification.
+C)  Develop a website for maintaining an electronic store using FLAKS or DJANGO framework.
+D)  Lung Cancer Detection using Decision Tree Algorithm.
+Correct Answer: C

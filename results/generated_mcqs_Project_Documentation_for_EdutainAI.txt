@@ -1,0 +1,23 @@
+## MCQ
+Question: Which web framework is used to build the EdutainAI application?
+A) Django
+B) Flask
+C) Node.js
+D) Express.js
+Correct Answer: B
+
+## MCQ
+Question: Which library is used for extracting text from DOCX files?
+A) pdfplumber
+B) python-docx
+C) FPDF
+D) pymongo
+Correct Answer: B
+
+## MCQ
+Question: Where are user credentials stored in EdutainAI?
+A) SQLite database
+B) JSON file
+C) MongoDB
+D) Redis cache
+Correct Answer: C

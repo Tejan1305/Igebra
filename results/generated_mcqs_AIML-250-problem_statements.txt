@@ -1,0 +1,16 @@
+## MCQ
+Question: Which project involves using machine learning to recognize facial expressions and determine emotions?
+A) Fraud detection system for credit card transactions
+B) Real-time facial recognition in crowded environments
+C) Recognizing the emotional state of a human from his/her facial gestures
+D) Stock market prediction model
+Correct Answer: C
+
+
+## MCQ
+Question:  Which project focuses on automating the classification of news articles as "real" or "fake"?
+A) Simulation of 8-puzzle game
+B) Recognize the facial emotions using neural network
+C) Machine Learning Program to Solve Geometry Analogy Problems
+D) Fake News Detection using machine learning
+Correct Answer: D
